@@ -1,0 +1,24 @@
+.product{
+    display: flex;
+    border-bottom: 1px solid lightblue;
+    margin: 0px 10px 10px 0px;
+    padding: 10px 0px;
+}
+.product-img{}
+.product-content{
+    padding: 10px;
+}
+.product-name{
+    color: blue;
+    font-size: 16px;
+    font-weight: 400;
+}
+.common-button, .showDetails{
+    background-color: #f0c14b;
+    border: 1px solid rgb(170, 170, 170);
+    border-radius: 2px;
+    font-size: 15px;
+    padding: 2px 20px;
+    margin-top: 5px;
+    margin-right: 50px;
+}

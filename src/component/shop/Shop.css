@@ -1,0 +1,11 @@
+.shopAndReviewContainer{
+    display: flex;
+}
+.product-container{
+    width: 75%;
+    margin:0px 10px 0px 200px;
+    border-right: 1px solid lightblue;
+}
+.cart-container{
+    width: 25%;
+}

@@ -1,0 +1,21 @@
+.product-details{
+    width:70%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.product-details-content h5{
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.product-details-content p{
+    font-size: 16px;
+    line-height:5px;
+}
+.product-details-content li{
+    font-size: 14px;
+    line-height: 18px;
+}

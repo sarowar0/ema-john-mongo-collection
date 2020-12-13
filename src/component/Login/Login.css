@@ -1,0 +1,15 @@
+.login-container{
+    width: 25%;
+    margin: auto;
+    margin-top: 20px;
+}
+.login-container input{
+    margin: 15px 0px;
+}
+.create-account{
+    background-color: orange;
+    border: none;
+    outline: none;
+    padding: 7px 20px;
+    width: 100%;
+}
