@@ -24,6 +24,7 @@ function App() {
  
 
   return (
+
     <AuthContextProvider>
       <Router>
       <Header></Header>

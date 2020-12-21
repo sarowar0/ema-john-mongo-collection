@@ -14,7 +14,7 @@ const Shipment = () => {
     const onSubmit = data => {
         const savedCart = getDatabaseCart();
         const orderDetails = {...auth.user, shipment:data, product: savedCart };
-        fetch('http://localhost:5000/order', {
+        fetch('https://afternoon-cove-20073.herokuapp.com/order', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(orderDetails)

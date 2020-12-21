@@ -3,6 +3,7 @@ import './Login.css';
 import { useAuth } from './useAuth';
 
 const Login = () => {
+  document.title ='ema-john-login'
   const auth = useAuth();
   const user = auth.user;
   //Form validation

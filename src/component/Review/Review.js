@@ -10,7 +10,9 @@ import { useAuth } from '../Login/useAuth';
 
 
 const Review = () => {
+    document.title = 'Ema-john | Order review'
     const [cart, setCart] = useState([]);
+    const [loadding, setLoading] = useState(true);
     const [placeOrder, setPlaceOrder] = useState(false);
     let history = useHistory()
 
@@ -26,7 +28,7 @@ const Review = () => {
         const savedCart = getDatabaseCart();
         const productKeys = Object.keys(savedCart);
 
-        fetch('http://localhost:5000/productsByKeys',{
+        fetch('https://afternoon-cove-20073.herokuapp.com/productsByKeys',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -34,7 +36,10 @@ const Review = () => {
             body: JSON.stringify(productKeys)
         })
         .then(res => res.json())
-        .then(data => setCart(data))
+        .then(data => {
+            setCart(data)
+            setLoading(false)
+        })
 
     }, [])
 
@@ -45,6 +50,9 @@ const Review = () => {
         <div className='shopAndReviewContainer'>
             <div className="product-container">
                 {
+                    loadding ? 
+                    <div className="spinner-border mx-auto d-block mt-5" role="status"></div>
+                    :
                     cart.map(cart =>
                         <ReviewItems
                             removeProduct={removeProduct}

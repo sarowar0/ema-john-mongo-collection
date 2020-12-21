@@ -5,13 +5,13 @@ import Cart from '../cart/Cart';
 import Product from '../product/Product';
 import './Shop.css'
 const Shop = () => {
-
+    document.title = 'Shop'
     const [products, setProducts] = useState([])
     const [cart, setCart] = useState([])
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://afternoon-cove-20073.herokuapp.com/products')
             .then(res => res.json())
             .then(products => setProducts(products))
     }, [])
@@ -20,14 +20,14 @@ const Shop = () => {
     useEffect(() => {
         const savedCart = getDatabaseCart();
         const productKeys = Object.keys(savedCart);
-        
-        fetch('http://localhost:5000/productsByKeys', {
+
+        fetch('https://afternoon-cove-20073.herokuapp.com/productsByKeys', {
             method: 'POST',
-            headers: {'Content-Type': 'application/json'},
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(productKeys)
         })
-        .then(res => res.json())
-        .then(data => setCart(data))
+            .then(res => res.json())
+            .then(data => setCart(data))
     }, [])
 
 
@@ -50,13 +50,17 @@ const Shop = () => {
     return (
         <div className='shopAndReviewContainer'>
             <div className='product-container'>
-                {
+               
+                {   
+                    products.length > 0 ?
                     products.map(pd => <Product
                         showAddToCart={true}
                         product={pd}
                         handlerCarBtn={handlerCarBtn}
                         key={pd.key}
                     ></Product>)
+                    :
+                    <div className="spinner-border mx-auto mt-5 d-block" role="status"></div>
                 }
             </div>
             <div className='cart-container'>
